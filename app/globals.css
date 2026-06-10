@@ -1,0 +1,545 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ════════════════════════════════════════════════════════════════
+   HUSTLERS — Design System  ·  "MONO"
+   Minimal · black & white · AI-product clean · flat · typographic
+   Brand is pure monochrome; only functional status colors carry hue.
+   Token NAMES are preserved so every component keeps working —
+   only the VALUES (and motifs) changed.
+   ════════════════════════════════════════════════════════════════ */
+
+@theme inline {
+  /* ── HUSTLERS brand palette (now monochrome accents) ── */
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-glow: var(--brand-glow);
+  --color-brand-lime: var(--brand-lime);   /* legacy name → neutral accent */
+  --color-brand-violet: var(--brand-lime); /* friendly alias for new code */
+  --color-brand-foreground: var(--brand-foreground);
+
+  /* ── Semantic status colors (the ONLY hues in the system) ── */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  /* ── Surface helpers ── */
+  --color-surface: var(--gym-surface);
+  --color-surface-raised: var(--gym-surface-raised);
+
+  /* ── Fonts ── */
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-display);
+  --font-display: var(--font-display);
+  --font-condensed: var(--font-condensed);
+  --font-bebas: var(--font-display);   /* legacy alias kept for existing utilities */
+
+  /* ── Core token → utility wiring ── */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* ── Radius scale — soft, modern, minimal (shadcn-like) ── */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   LIGHT MODE — pure white canvas, ink-black type, hairline borders
+   ════════════════════════════════════════════════════════════════ */
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+
+  --primary: #e11d2a;            /* HUSTLERS red — red buttons, white text */
+  --primary-foreground: #ffffff;
+
+  --secondary: #f4f4f5;
+  --secondary-foreground: #171717;
+  --muted: #f4f4f5;
+  --muted-foreground: #5b5b63;   /* ≥4.5:1 neutral on white */
+  --accent: #f4f4f5;
+  --accent-foreground: #171717;
+
+  --success: #16a34a;
+  --success-foreground: #ffffff;
+  --warning: #d97706;
+  --warning-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --border: #e6e6e9;
+  --input: #e2e2e6;
+  --ring: #e11d2a;
+
+  /* Chart ramp — red lead, neutral support */
+  --chart-1: #e11d2a;
+  --chart-2: #f0717a;
+  --chart-3: #404044;
+  --chart-4: #8a8a91;
+  --chart-5: #c7c7cd;
+
+  --radius: 0.625rem;   /* 10px — gentle modern minimal */
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0a0a0a;
+  --sidebar-primary: #e11d2a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #171717;
+  --sidebar-border: #e6e6e9;
+  --sidebar-ring: #e11d2a;
+
+  /* HUSTLERS brand accents — red on black/white */
+  --brand: #e11d2a;
+  --brand-strong: #b3121c;
+  --brand-glow: #ff4d57;
+  --brand-lime: #3f3f46;       /* legacy name → neutral graphite */
+  --brand-foreground: #ffffff;
+
+  /* Surfaces */
+  --gym-surface: #ffffff;
+  --gym-surface-raised: #fafafa;
+  --gym-border-subtle: #ededf0;
+  --gym-text-primary: #0a0a0a;
+  --gym-text-secondary: #3f3f46;
+  --gym-text-muted: #71717a;
+
+  /* Gradients & shadows — red brand */
+  --gradient-brand: linear-gradient(135deg, #e11d2a 0%, #8e0f18 100%);
+  --gradient-brand-soft: linear-gradient(135deg, #fdeaeb 0%, #f7d4d7 100%);
+  --shadow-brand: 0 10px 30px -12px rgba(225, 29, 42, 0.45);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px -18px rgba(0, 0, 0, 0.16);
+  --glow-ring: 0 0 0 1px rgba(10, 10, 10, 0.08), 0 10px 30px -16px rgba(0, 0, 0, 0.2);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   DARK MODE — near-black canvas, soft-white type, faint borders
+   ════════════════════════════════════════════════════════════════ */
+.dark {
+  --background: #0a0a0b;
+  --foreground: #fafafa;
+  --card: #141416;
+  --card-foreground: #fafafa;
+  --popover: #141416;
+  --popover-foreground: #fafafa;
+
+  --primary: #f02b39;            /* HUSTLERS red — red buttons, white text */
+  --primary-foreground: #ffffff;
+
+  --secondary: #1c1c1f;
+  --secondary-foreground: #fafafa;
+  --muted: #1a1a1d;
+  --muted-foreground: #a1a1aa;   /* ≥4.5:1 neutral on near-black */
+  --accent: #1c1c1f;
+  --accent-foreground: #fafafa;
+
+  --success: #22c55e;
+  --success-foreground: #04130d;
+  --warning: #f59e0b;
+  --warning-foreground: #1a1205;
+  --destructive: #f87171;
+  --destructive-foreground: #1a0606;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: #f02b39;
+
+  /* Chart ramp — red lead, neutral support (on dark) */
+  --chart-1: #f02b39;
+  --chart-2: #ff7a83;
+  --chart-3: #d4d4d8;
+  --chart-4: #a1a1aa;
+  --chart-5: #71717a;
+
+  --sidebar: #0d0d0f;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #f02b39;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1a1a1d;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #f02b39;
+
+  /* HUSTLERS brand accents — red on black */
+  --brand: #f02b39;
+  --brand-strong: #ff4d57;
+  --brand-glow: #ff5a63;
+  --brand-lime: #d4d4d8;       /* legacy name → neutral silver */
+  --brand-foreground: #ffffff;
+
+  /* Surfaces */
+  --gym-surface: #141416;
+  --gym-surface-raised: #1c1c1f;
+  --gym-border-subtle: rgba(255, 255, 255, 0.1);
+  --gym-text-primary: #fafafa;
+  --gym-text-secondary: #c7c7cd;
+  --gym-text-muted: #8b8b93;
+
+  /* Gradients & shadows — red brand */
+  --gradient-brand: linear-gradient(135deg, #f02b39 0%, #b3121c 100%);
+  --gradient-brand-soft: linear-gradient(135deg, #1c1c1f 0%, #141416 100%);
+  --shadow-brand: 0 10px 36px -14px rgba(240, 43, 57, 0.5);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 40px -20px rgba(0, 0, 0, 0.7);
+  --glow-ring: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 12px 40px -16px rgba(0, 0, 0, 0.7);
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--border);
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+  }
+  html, body {
+    @apply font-sans bg-background text-foreground;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  /* Legacy font-variable aliases → repointed to the MONO type system.
+     Existing inline styles using var(--font-bebas-neue|oswald|inter) keep working,
+     now rendering Space Grotesk / Space Grotesk / Manrope respectively. */
+  :root {
+    --font-bebas-neue: var(--font-display);
+    --font-bebas: var(--font-display);
+    --font-oswald: var(--font-condensed);
+    --font-inter: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: var(--foreground);
+    color: var(--background);
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   MINIMAL UTILITIES
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Icon vibe — bolder lucide strokes app-wide ──
+   Unitless stroke-width is interpreted in SVG user units (like the
+   `strokeWidth` prop), so weight scales consistently across icon sizes.
+   Bumped 2 → 2.5 for a chunkier, more confident look. Override per-icon
+   by passing `strokeWidth={n}` (renders as an attribute CSS beats — so
+   for a thinner one-off, set it via inline style instead).
+   The viewBox selector also catches the @lucide-animated icons, whose
+   <svg> carries no `.lucide` class but always uses a 24x24 viewBox. */
+.lucide,
+svg[viewBox="0 0 24 24"] {
+  stroke-width: 2.5;
+}
+
+/* Brand "gradient" text — subtle red tonal shimmer on text accents.
+   NOTE: scoped with :not(svg) so it never hijacks lucide icons. An icon
+   given `text-primary` would otherwise inherit `color: transparent`
+   (currentColor → invisible stroke). SVGs fall back to the normal
+   Tailwind `.text-primary` utility (solid `--primary` red) instead. */
+:not(svg).text-primary {
+  background: var(--gradient-brand);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Brand fill */
+.bg-gradient-brand { background: var(--gradient-brand); background-size: 150% 150%; }
+.bg-gradient-brand-soft { background: var(--gradient-brand-soft); }
+
+/* Soft neutral elevation (kept subtle — flat aesthetic) */
+.glow-brand { box-shadow: var(--shadow-brand); }
+.glow-ring { box-shadow: var(--glow-ring); }
+.shadow-card { box-shadow: var(--shadow-card); }
+
+/* Glass surfaces (visible in BOTH themes) */
+.glass {
+  background: color-mix(in srgb, var(--card) 86%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+}
+.glass-strong {
+  background: color-mix(in srgb, var(--card) 94%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* ── Hairline grids — neutral, barely-there ── */
+.bg-grid {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--foreground) 6%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+.bg-grid-lines,
+.bg-grid-lines-brand {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--foreground) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--foreground) 5%, transparent) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Soft neutral mesh — adds depth without color */
+.bg-mesh {
+  background-image:
+    radial-gradient(42% 52% at 10% 0%, color-mix(in srgb, var(--foreground) 5%, transparent) 0%, transparent 70%),
+    radial-gradient(46% 50% at 92% 8%, color-mix(in srgb, var(--foreground) 4%, transparent) 0%, transparent 70%),
+    radial-gradient(52% 52% at 50% 112%, color-mix(in srgb, var(--foreground) 5%, transparent) 0%, transparent 70%);
+}
+
+/* Neutral ring/border accent */
+.border-neon {
+  border-color: color-mix(in srgb, var(--foreground) 22%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--foreground) 6%, transparent);
+}
+
+/* ── CORNER FRAME — minimal L-brackets (subtle neutral) ──
+   Add `.corner-frame` to any `position: relative` box. */
+.corner-frame::before,
+.corner-frame::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: color-mix(in srgb, var(--foreground) 35%, transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.corner-frame::before {
+  top: -1px; left: -1px;
+  border-top-width: 1px; border-left-width: 1px;
+}
+.corner-frame::after {
+  bottom: -1px; right: -1px;
+  border-bottom-width: 1px; border-right-width: 1px;
+}
+
+/* Eyebrow label — clean editorial, square marker from markup */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--muted-foreground);
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* Marquee */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-x 30s linear infinite;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* ── ANIMATIONS (subtle in monochrome) ── */
+@keyframes gradient-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient { animation: gradient-pan 8s ease infinite; }
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float { animation: float-y 6s ease-in-out infinite; }
+
+/* Breathing glow — neutral, restrained */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 1px color-mix(in srgb, var(--foreground) 10%, transparent); }
+  50% { box-shadow: 0 0 0 1px color-mix(in srgb, var(--foreground) 20%, transparent), 0 0 28px -16px var(--foreground); }
+}
+.animate-glow-pulse { animation: glow-pulse 4s ease-in-out infinite; }
+
+/* Scanline sweep — neutral highlight */
+@keyframes scan-y {
+  0% { transform: translateY(-100%); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(900%); opacity: 0; }
+}
+.scanline { position: relative; overflow: hidden; }
+.scanline::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  height: 12%;
+  background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--foreground) 14%, transparent), transparent);
+  animation: scan-y 5s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hover sheen — soft white pass */
+.sheen { position: relative; overflow: hidden; }
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    color-mix(in srgb, #ffffff 16%, transparent) 45%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+.sheen:hover::after { transform: translateX(120%); }
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide ALL scrollbars site-wide — Lenis handles smooth scrolling */
+*,
+*::before,
+*::after {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100%;
+}
+
+/* Stop the page scrolling while an overlay (cart / mobile menu) is open. */
+html.scroll-locked {
+  overflow: hidden;
+}
+
+/* Diagonal clip for fat-loss section */
+.clip-diagonal-top {
+  clip-path: polygon(0 32px, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Noise texture overlay */
+.noise-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .sheen::after { display: none; }
+  .scanline::before { display: none; }
+  .animate-gradient, .animate-glow-pulse, .animate-float { animation: none !important; }
+}
+
+/* ── Animated theme toggle (View Transitions API) ── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.55s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) { z-index: 0; }
+::view-transition-new(root) { z-index: 1; }
+
+/* Mux background video — full cover, no controls, no chrome */
+mux-video,
+mux-video video {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+mux-video::part(media-control-bar),
+mux-video::part(media-loading-indicator),
+mux-video::part(media-gesture-receiver),
+mux-video::-webkit-media-controls,
+mux-video::-webkit-media-controls-enclosure,
+mux-video::-webkit-media-controls-panel {
+  display: none !important;
+}
