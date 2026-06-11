@@ -162,14 +162,13 @@ export function Hero() {
             <h1
               className="mt-6 uppercase text-white leading-[0.86] tracking-[-0.03em]"
               style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(2.75rem, 9vw, 8.5rem)" }}
-              aria-label="Biggest Gym in Johar Town"
             >
               <span className="block overflow-hidden pb-[0.06em]">
-                <span className="hero-line block">Biggest Gym</span>
+                <span className="hero-line block">Lahore&apos;s Best Gym</span>
               </span>
               <span className="block overflow-hidden pb-[0.06em]">
                 <span className="hero-line block text-[#f02b39]">
-                  In Johar Town
+                  Johar Town
                 </span>
               </span>
             </h1>

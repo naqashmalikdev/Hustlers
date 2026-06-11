@@ -26,7 +26,7 @@ export function Branches() {
             Find<span style={{ color: "transparent", WebkitTextStroke: "1.5px var(--primary)" }}>Us</span>
           </h2>
           <p className="lg:col-span-4 text-muted-foreground text-[15px] leading-relaxed lg:pb-3">
-            Visit us at Johar Town, Lahore — we&apos;d love to have you train with us.
+            The best gym in Johar Town, Lahore — 876 &amp; 877 R1, near KIPS Academy. Open Mon–Sat, 6 AM to midnight.
           </p>
         </div>
 

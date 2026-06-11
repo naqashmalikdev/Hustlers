@@ -87,7 +87,7 @@ export function Footer() {
             </div>
 
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-              Johar Town&apos;s biggest gym — elite coaching, championship-grade equipment, and premium facilities for those who refuse to settle.
+              Lahore&apos;s best gym in Johar Town — elite coaching, personal trainers, championship-grade equipment, and flexible gym memberships for those who refuse to settle.
             </p>
 
             <div className="flex gap-2">

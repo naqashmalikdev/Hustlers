@@ -4,8 +4,25 @@ import { ShopClient } from "./ShopClient";
 import type { Product } from "@/lib/supabase/types";
 
 export const metadata = {
-  title: "Shop Supplements — HUSTLERS",
-  description: "Premium gym nutrition — protein, pre-workout, recovery and vitamins from HUSTLERS.",
+  title: "Gym Supplements Lahore — Protein, Pre-Workout & More",
+  description:
+    "Shop premium gym supplements in Lahore at Hustlers Gym — protein, pre-workout, recovery and vitamins. Available in-store at Johar Town or order online.",
+  keywords: [
+    "gym supplements Lahore",
+    "protein powder Lahore",
+    "pre-workout Lahore",
+    "buy supplements Lahore",
+    "Hustlers gym supplements",
+  ],
+  alternates: {
+    canonical: "https://hustlersgym.pk/shop",
+  },
+  openGraph: {
+    title: "Gym Supplements Lahore — Hustlers Gym Shop",
+    description:
+      "Premium protein, pre-workout, recovery & vitamins — available at Hustlers Gym, Johar Town, Lahore.",
+    url: "https://hustlersgym.pk/shop",
+  },
 };
 
 async function getProducts(): Promise<Product[]> {
