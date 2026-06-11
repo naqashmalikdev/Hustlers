@@ -53,6 +53,11 @@ export const metadata: Metadata = {
     "ladies gym Lahore",
     "gym near me Lahore",
   ],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   authors: [{ name: "Hustlers Gym" }],
   creator: "Hustlers Gym",
   publisher: "Hustlers Gym",
