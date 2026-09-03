@@ -5,6 +5,7 @@ import { Phone, MapPin, Clock } from "@/components/ui/animated-icons";
 
 const WA_NUMBER = "923364404573";
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Hello! I'd like to know more about joining Hustlers Gym.")}`;
+const MAPS_URL = "https://maps.app.goo.gl/YvQWJ9SyqYCsg1sh7";
 
 function WhatsAppIcon() {
   return (
@@ -16,7 +17,7 @@ function WhatsAppIcon() {
 
 const infoItems = [
   { icon: Phone,  label: "Phone",    value: "+92 336 4404573" },
-  { icon: MapPin, label: "Location", value: "876 & 877 R1, Johar Town, Lahore" },
+  { icon: MapPin, label: "Location", value: "876 & 877 R1, Johar Town, Lahore", href: MAPS_URL },
   { icon: Clock,  label: "Hours",    value: "Mon–Sat: 6:00 AM – 12:00 AM | Closed Sunday" },
 ];
 
@@ -52,7 +53,7 @@ export function Contact() {
 
             {/* Info */}
             <div className="flex flex-col divide-y divide-border border-b lg:border-b-0 lg:border-r border-border">
-              {infoItems.map(({ icon: Icon, label, value }) => (
+              {infoItems.map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4 px-7 py-6">
                   <span className="w-9 h-9 rounded-lg border border-border flex items-center justify-center shrink-0 text-foreground mt-0.5">
                     <Icon size={14} />
@@ -61,7 +62,18 @@ export function Contact() {
                     <p className="text-muted-foreground text-[9px] tracking-[0.25em] uppercase mb-1.5" style={{ fontFamily: "var(--font-oswald)" }}>
                       {label}
                     </p>
-                    <p className="text-foreground text-sm leading-snug">{value}</p>
+                    {href ? (
+                      <Link
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground text-sm leading-snug underline underline-offset-2 decoration-border hover:decoration-foreground transition-colors duration-200"
+                      >
+                        {value}
+                      </Link>
+                    ) : (
+                      <p className="text-foreground text-sm leading-snug">{value}</p>
+                    )}
                   </div>
                 </div>
               ))}

@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Clock } from "@/components/ui/animated-icons";
 
+const MAPS_URL = "https://maps.app.goo.gl/YvQWJ9SyqYCsg1sh7";
+
 export function Branches() {
   return (
     <section id="branches" className="border-t border-border" aria-label="Location">
@@ -67,7 +69,7 @@ export function Branches() {
                   icon: MapPin,
                   label: "Address",
                   val: "876 & 877 R1, Johar Town, Lahore — Near KIPS Academy",
-                  href: "https://maps.app.goo.gl/KTAiEFCTUpd34sVWA",
+                  href: MAPS_URL,
                 },
                 {
                   icon: Phone,
@@ -103,6 +105,36 @@ export function Branches() {
                   </div>
                 </div>
               ))}
+
+              <div className="mt-auto px-7 py-7">
+                <Link
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get directions to Hustlers Gym on Google Maps"
+                  className="group flex w-full items-center justify-between gap-4 rounded-xl bg-primary px-6 py-5 text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_12px_32px_-12px_var(--primary)]"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-foreground/10">
+                      <MapPin size={18} />
+                    </span>
+                    <span>
+                      <span
+                        className="block text-[15px] font-bold uppercase tracking-[0.12em]"
+                        style={{ fontFamily: "var(--font-condensed)" }}
+                      >
+                        Get Directions
+                      </span>
+                      <span className="mt-0.5 block text-xs text-primary-foreground/70">
+                        Open location in Google Maps
+                      </span>
+                    </span>
+                  </span>
+                  <span aria-hidden="true" className="text-xl transition-transform duration-200 group-hover:translate-x-1">
+                    ↗
+                  </span>
+                </Link>
+              </div>
 
             </div>
           </div>
