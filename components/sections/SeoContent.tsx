@@ -61,9 +61,9 @@ export function SeoContent() {
 
             <p>
               Our <strong className="text-foreground">gym membership in Lahore</strong> is one of the most
-              affordable in the city, with flexible plans starting at PKR 5,000/month for ladies and PKR
-              6,000/month for regular members. Couple plans and multi-month packages are also available. Our
-              registration process is quick — walk in any day Monday through Saturday, 6:00 AM to 12:00 AM.
+              affordable in the city, with flexible plans starting at PKR 6,000/month for ladies and PKR
+              7,000/month for regular members. Couple plans and multi-month packages are also available, and
+              registration is 100% free — walk in any day Monday through Saturday, we are open 24 hours.
             </p>
 
             <p>
@@ -73,7 +73,7 @@ export function SeoContent() {
               resistance machines, functional training zones, and a fully equipped cardio floor. We also
               offer a{" "}
               <strong className="text-foreground">dedicated ladies section</strong> with daily co-ed
-              morning and evening timings, plus an exclusive ladies-only block from 10:30 AM to 4:00 PM,
+              morning and evening timings, plus an exclusive ladies-only block from 11:00 AM to 4:00 PM,
               complete with a free group fitness class every day.
             </p>
 

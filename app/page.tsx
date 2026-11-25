@@ -39,11 +39,11 @@ const localBusinessSchema = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "06:00",
-      closes: "00:00",
+      opens: "00:00",
+      closes: "23:59",
     },
   ],
-  priceRange: "PKR 5,000 – PKR 6,000/month",
+  priceRange: "PKR 6,000 – PKR 13,000/month",
   currenciesAccepted: "PKR",
   paymentAccepted: "Cash",
   amenityFeature: [

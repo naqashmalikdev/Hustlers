@@ -18,7 +18,7 @@ function WhatsAppIcon() {
 const infoItems = [
   { icon: Phone,  label: "Phone",    value: "+92 336 4404573" },
   { icon: MapPin, label: "Location", value: "876 & 877 R1, Johar Town, Lahore", href: MAPS_URL },
-  { icon: Clock,  label: "Hours",    value: "Mon–Sat: 6:00 AM – 12:00 AM | Closed Sunday" },
+  { icon: Clock,  label: "Hours",    value: "Mon–Sat: Open 24 Hours | Closed Sunday" },
 ];
 
 export function Contact() {

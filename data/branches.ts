@@ -46,7 +46,7 @@ export const branches: Branch[] = [
     address: "9732+4R7, Main Blvd, Block M, Lake City, Lahore, Pakistan",
     phone: "+92 42 111 487 853 | +92 300 487 8530",
     email: "lakecity@hustlers.pk",
-    hours: "Mon–Sat: 6:00 AM – 12:00 AM | Closed Sunday",
+    hours: "Mon–Sat: Open 24 Hours | Closed Sunday",
     amenities: [
       "Gym Floor",
       "Ladies Section",
@@ -64,23 +64,23 @@ export const branches: Branch[] = [
     instagram: "https://www.instagram.com/hustlers.pk/",
     mapsUrl: "https://maps.app.goo.gl/F71NmcLwyNHqaAdn6",
     timings: [
-      { label: "Co-Timings (Morning)", time: "6:00 AM – 10:30 AM" },
-      { label: "Ladies Timings", time: "10:30 AM – 4:00 PM" },
-      { label: "Co-Timings (Evening)", time: "4:00 PM – 12:00 AM" },
+      { label: "Co-Timings (Morning)", time: "5:00 AM – 11:00 AM" },
+      { label: "Ladies Timings", time: "11:00 AM – 4:00 PM" },
+      { label: "Co-Timings (Evening)", time: "4:00 PM – 5:00 AM" },
     ],
     membership: {
       monthly: [
-        { type: "Regular", price: 6000, registrationFee: 3000 },
-        { type: "Female", price: 5000, registrationNote: "No registration fee" },
-        { type: "Couple", price: 10000, registrationNote: "No registration fee" },
+        { type: "Regular", price: 7000, registrationNote: "No registration fee" },
+        { type: "Female", price: 6000, registrationNote: "No registration fee" },
+        { type: "Couple", price: 13000, registrationNote: "No registration fee" },
       ],
       packages: [
-        { duration: "3 Months", price: 16000 },
-        { duration: "6 Months", price: 30000 },
+        { duration: "3 Months", price: 20000 },
+        { duration: "6 Months", price: 40000 },
       ],
       notes: [
-        "PKR 3,000 registration charges apply for Regular membership.",
-        "Registration charges 100% OFF for Females & Couples.",
+        "Registration charges 100% OFF for all memberships.",
+        "Personal trainer charges: PKR 15,000.",
       ],
     },
   },

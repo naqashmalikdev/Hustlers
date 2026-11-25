@@ -79,7 +79,7 @@ export function Branches() {
                 {
                   icon: Clock,
                   label: "Hours",
-                  val: "Mon–Sat: 6:00 AM – 12:00 AM | Closed Sunday",
+                  val: "Mon–Sat: Open 24 Hours | Closed Sunday",
                 },
               ].map(({ icon: Icon, label, val, href }) => (
                 <div key={label} className="flex items-start gap-4 px-7 py-6 border-b border-border">
